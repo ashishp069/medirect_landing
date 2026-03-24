@@ -7,8 +7,7 @@ import { getCmsList } from "../api/cmsApi";
 import "../styles/owl.carousel.min.css";
 import "../styles/owl.theme.default.min.css";
 import "../styles/animate.min.css";
-import "../App.css";
-import "../styles/responsive.css";
+
 
 
 import doctorImg from "../assets/images/sec1-right.png";
