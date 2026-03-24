@@ -454,7 +454,7 @@ marquee img {
 }
 
 .empowering {
-  background: url('../images//doctors-solving.png')0 0 no-repeat;
+  background: url('assets/images/doctors-solving.png')0 0 no-repeat;
   background-size: cover;
   padding: 106px 60px;
 

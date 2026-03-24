@@ -13,8 +13,10 @@ import "../styles/responsive.css";
 
 import doctorImg from "../assets/images/sec1-right.png";
 import avatar1 from "../assets/images/WebsiteLogo.svg";
-import avatar2 from "../assets/images/sec1-right.png";
+import danger from "../assets/images/emp-left.svg";
+import safe from "../assets/images/emp-right.svg";
 import footer from "../assets/images/footer-logo.svg";
+
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -240,7 +242,7 @@ export default function Hero() {
               <ul>
                 {cmsData?.section_8?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
-                    <img src="assets/images/emp-left.svg" alt="" />
+                    <img src={danger} alt="" />
                     {item.title}
                   </li>
                 ))}
@@ -253,7 +255,7 @@ export default function Hero() {
               <ul>
                 {cmsData?.section_9?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
-                    <img src="assets/images/emp-right.svg" alt="" />
+                    <img src={safe} alt="" />
                     {item.title}
                   </li>
                 ))}
