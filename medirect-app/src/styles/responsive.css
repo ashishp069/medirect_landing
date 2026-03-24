@@ -1,0 +1,469 @@
+@media only screen and (min-width:993px) and (max-width:1100px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:767px) {
+    .menu-icon {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 41px;
+        row-gap: 6px;
+    }
+
+
+    .menu-icon span {
+        background: #1b3453;
+        border-radius: 10px;
+        height: 3px;
+    }
+
+
+    .menu-icon span:nth-of-type(1) {
+        width: 50%;
+    }
+
+    .menu-icon span:nth-of-type(2) {
+        width: 100%;
+    }
+
+    .menu-icon span:nth-of-type(3) {
+        width: 75%;
+    }
+
+    .close-icon {
+        font-size: 16px !important;
+        padding: 10px !important;
+        width: 30px !important;
+        height: 30px;
+        border-radius: 50% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        background-color: transparent;
+    }
+
+    .header-center {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        transition: 0.5s all;
+        z-index: 9;
+        flex-direction: column;
+        padding: 20px;
+        align-items: unset !important;
+        row-gap: 20px;
+        transform: scale(0);
+    }
+
+    .header-center.show {
+        visibility: visible;
+        opacity: 1;
+        border-radius: 0;
+        transform: scale(1);
+    }
+
+
+    .header {
+        padding: 15px;
+    }
+
+    .section-1 {
+        padding: 10px 15px;
+    }
+
+    .sec1-left {
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .image-sec img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .image-sec img:nth-child(2) {
+        left: -8px;
+    }
+
+    .image-sec img:nth-child(3) {
+        left: -17px;
+    }
+
+    .sec1-left h1 {
+        padding: 15px 0 9px;
+        font-size: 30px;
+        line-height: 33px;
+    }
+
+    .sec1-left-p {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    .border-btn,
+    .background-btn {
+        font-size: 14px;
+        padding: 11px 15px;
+    }
+
+    .btn-sec1 {
+        padding-bottom: 20px;
+    }
+
+    .sec1-right {
+        margin-top: 15px;
+    }
+
+    .sec1-right img {
+        border-radius: 12px;
+        height: 300px;
+    }
+
+    .section-2 {
+        padding: 30px 15px;
+    }
+
+    .about-right h4 {
+        font-size: 24px;
+        line-height: 32px;
+        padding-top: 20px;
+    }
+
+    .section-2 p {
+        font-size: 14px;
+        padding: 18px 0 30px;
+    }
+
+    .section-2 button {
+        padding: 10px 47px;
+    }
+
+    .marquee-section {
+        margin: 56px 0 92px;
+    }
+
+    .marquee-1 {
+        font-size: 12px;
+    }
+
+    marquee img {
+        margin: 0 25px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .solution-sec {
+        border-radius: 8px;
+        padding: 30px 10px;
+    }
+
+    .solution-sec h6 {
+        font-size: 14px;
+        padding-bottom: 30px;
+    }
+
+    .solution-sec h4 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .section-3 {
+        padding: 30px 15px;
+    }
+
+    .virtual-sec {
+        padding: 0;
+    }
+
+    .virtual-sec img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .virtual-sec h4 {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 23px 0 12px;
+        width: 100%;
+    }
+
+    .virtual-sec p {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .virtual-2 {
+        border-left: 0;
+        border-right: 0;
+        padding: 0;
+    }
+
+    .virtual-row {
+        row-gap: 30px;
+    }
+
+    .section-4 {
+        padding: 30px 15px;
+    }
+
+    .why-1 h4 {
+        font-size: 30px;
+    }
+
+    .why-1 p {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 15px 0 27px;
+    }
+
+    .instant-row .col-md-1 {
+        display: none;
+
+    }
+
+    .instant-row {
+        row-gap: 20px;
+        margin-top: 20px;
+    }
+
+    .why-col {
+        padding-top: 0;
+    }
+
+    .why-cont {
+        padding: 13px 7px;
+    }
+
+    .why-cont h4 {
+        font-size: 18px;
+    }
+
+    .section-4 button {
+        width: auto;
+        margin: 30px auto 0;
+    }
+
+    .section-6 {
+        padding: 30px 15px;
+    }
+
+    .create-account {
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+
+    .create-account h4 {
+        font-size: 16px;
+    }
+
+    .create-account p {
+        column-gap: 15px;
+        font-size: 12px;
+        padding-bottom: 30px;
+    }
+
+    .create-account p span {
+        width: 14px;
+        min-width: 14px;
+        height: 14px;
+    }
+
+    .create-account p::after {
+        left: 6.5px;
+    }
+
+    .create-account .active p::after {
+        border: 1px solid #1B3453;
+        left: 6px;
+    }
+
+    .empowering {
+        padding: 30px 15px;
+    }
+
+    .emp-1 h1 {
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    .emp-1 p {
+        padding: 12px 0 35px;
+        font-size: 14px;
+    }
+
+    .emp-left {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .emp-left h4 {
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+
+    .emp-left ul li {
+        padding: 6px 0;
+        column-gap: 12px;
+        font-size: 12px;
+    }
+
+    .emp-left ul li img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .emp-row {
+        row-gap: 20px;
+    }
+
+    .whychoose {
+        padding: 30px 15px;
+    }
+
+    .whychoose .emp-1 p {
+        padding: 14px 0 24px;
+    }
+
+    .why-sec-row {
+        border-radius: 8px;
+        padding: 20px 15px;
+    }
+
+    .why-sec-row img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .why-sec-row h4 {
+        font-size: 18px;
+        padding-bottom: 12px;
+    }
+
+    .why-sec-row p {
+        font-size: 11px;
+    }
+
+    .why-row {
+        row-gap: 15px;
+        padding-bottom: 24px;
+    }
+
+    .faq {
+        padding: 30px 15px;
+    }
+
+    .faq h3 {
+        padding: 16px 0 23px;
+        font-size: 24px;
+    }
+
+    .accordion-button {
+        padding: 16px 24px 8px;
+    }
+
+    .accordion-button {
+        font-size: 18px;
+    }
+
+    .accordion-header .accordion-button.collapsed {
+        padding: 16px 24px;
+        border-radius: 8px !important;
+    }
+
+    .accordion-body {
+        font-size: 14px;
+        padding: 0 24px 16px;
+    }
+
+    .launch {
+        padding: 30px 15px;
+    }
+
+    .launch h2 {
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    .launch p {
+        padding: 13px 0 30px;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .foot-menu {
+        padding-top: 15px;
+        column-gap: 10px;
+    }
+
+    .footer-logo img {
+        height: 20px;
+    }
+
+    .foot-menu a {
+        font-size: 11px;
+    }
+
+    .footer h4 {
+        font-size: 24px;
+        padding-bottom: 34px;
+        padding-top: 20px;
+    }
+
+    .footer-last {
+        margin-top: 30px;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .footer-last p a,
+    .footer-last p {
+        font-size: 12px;
+    }
+
+    .logo img {
+        height: 20px;
+    }
+    .header-btn{
+        transition: 0.25s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 257px;
+        transform: translateY(30%);
+    }
+
+    .header-btn.show {
+        z-index: 99;
+        visibility: visible;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+
+}
