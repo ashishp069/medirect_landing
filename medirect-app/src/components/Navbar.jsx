@@ -17,7 +17,7 @@ export default function Navbar({ language, toggleLanguage }) {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
@@ -29,7 +29,7 @@ export default function Navbar({ language, toggleLanguage }) {
 
   return (
     <header className="container-fluid d-flex align-items-center justify-content-between header">
-      
+
       <Link to="/" className="logo">
         <img src={MEdirect} alt="Medirect logo" />
       </Link>
@@ -41,33 +41,36 @@ export default function Navbar({ language, toggleLanguage }) {
         <a href="#whychoose" onClick={(e) => handleNavClick(e, "whychoose")}>Why choose us</a>
         <a href="#howitwork" onClick={(e) => handleNavClick(e, "howitwork")}>How it works</a>
         <a href="#benefits" onClick={(e) => handleNavClick(e, "benefits")}>Benefits</a>
-        
+
         <button className="close-icon" onClick={toggleMenu}>
-          <i className="fa fa-times"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </div>
 
       {/* 2. Attach the toggle function and dynamically change the button text */}
-      <button 
-        className="btn border-btn" 
-        onClick={toggleLanguage}
-      >
-        {language === "عربي" ? "en" : "English"}
-      </button>
+      <div className="d-flex align-items-center  button-header">
+        <button
+          className="lang-btn background-btn"
+          onClick={toggleLanguage}
+        >
+          {language === "عربي" ? "en" : "English"}
+        </button>
 
-      <button 
-        className={`header-btn button-bg ${isMenuOpen ? "show" : ""}`}
-        onClick={() => navigate("/signup")}
-      >
-        Sign up for free
-      </button>
+        <button
+          className={`header-btn button-bg ${isMenuOpen ? "show" : ""}`}
+          onClick={() => navigate("/signup")}
+        >
+          Sign up for free
+        </button>
 
-      <button className="menu-icon" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button className="menu-icon" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div >
 
     </header>
+
   );
 }

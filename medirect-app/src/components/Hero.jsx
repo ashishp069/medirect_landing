@@ -142,7 +142,7 @@ export default function Hero() {
           {[0, 1, 2].map((item, index) => {
             const data = cmsData?.section_4?.[index];
             return (
-              <div className="col-md-4" key={index}>
+              <div className="col-lg-4 col-md-6" key={index}>
                 <div className={`virtual-sec ${index > 0 ? `virtual-${index + 1}` : ""} wow animated fadeInUp`}>
                   <img src={data?.image} alt="" />
                   <h4>{stripHtml(data?.title)}</h4>
@@ -156,7 +156,7 @@ export default function Hero() {
 
       {/* WHY CHOOSE (INSTANT SETUP) SECTION 4 */}
       <section className="container-fluid section-4" id="whychoose">
-        <div className="col-md-6 mx-auto why-1">
+        <div className="col-lg-6 col-md-10 mx-auto why-1">
           <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.title)}</h4>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.description)}</p>
         </div>
@@ -234,7 +234,7 @@ export default function Hero() {
 
       {/* EMPOWERING DOCTORS (BENEFITS) SECTION */}
       <section className="container-fluid empowering" id="benefits">
-        <div className="col-md-6 mx-auto emp-1">
+        <div className="col-lg-6 col-md-10 mx-auto emp-1">
           <h1 className="wow animated fadeInUp">
             {stripHtml(title?.[0])},
             <span className="d-block">{stripHtml(title?.[1])}</span>
@@ -273,7 +273,7 @@ export default function Hero() {
 
       {/* WHY CHOOSE GRID SECTION */}
       <section className="container-fluid whychoose">
-        <div className="col-md-6 mx-auto emp-1">
+        <div className="col-lg-6 col-md-10 mx-auto emp-1">
           <h1 className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.title) || "Why Choose Medirect?"}</h1>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.description)}</p>
         </div>
@@ -297,7 +297,7 @@ export default function Hero() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="col-md-7 mx-auto faq">
+      <section className="col-lg-7 col-md-10 mx-auto faq">
         <h6>{stripHtml(cmsData?.section_11?.[0]?.title) || ""}</h6>
         <h3>{stripHtml(cmsData?.section_11?.[0]?.description) || ""}</h3>
         <div className="accordion" id="accordionExample">
@@ -309,7 +309,7 @@ export default function Hero() {
 
       {/* FINAL CTA (LAUNCH) */}
       <section className="container-fluid launch">
-        <div className="col-md-6 mx-auto text-center">
+        <div className="col-lg-6 col-md-10 mx-auto text-center">
           <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
           <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" onClick={() => navigate("/signup")}>
