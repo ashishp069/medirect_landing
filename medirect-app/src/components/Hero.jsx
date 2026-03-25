@@ -215,12 +215,12 @@ export default function Hero() {
           <div className="row justify-content-between">
             {cmsData?.section_6?.[0]?.sub_sections?.map((item, index) => (
               <React.Fragment key={item.id || index}>
-                <div className={`col-md-5 col-5 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
+                <div className={`col-lg-5 col-md-6 col-5 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
                   <h4>
                     {String(index + 1).padStart(2, "0")}. {stripHtml(item.title)}
                   </h4>
                 </div>
-                <div className={`col-md-5 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
+                <div className={`col-lg-5 col-md-6 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
                   <p>
                     <span></span>
                     {stripHtml(item.description)}

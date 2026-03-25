@@ -731,6 +731,63 @@ marquee img {
   padding: 9px 17px;
 }
 
+
+
+
+
+
+
+
+
+
+
+.ar {
+  direction: rtl;
+}
+
+.ar,
+.ar .accordion-button {
+  text-align: right;
+
+}
+
+.ar .image-sec img:nth-child(2) {
+  right: -12px;
+  left: unset;
+}
+
+.ar .create-account .active p::after {
+  right: 11px;
+  left: unset;
+}
+
+.ar .create-account p::after {
+  right: 11.5px;
+  left: unset;
+}
+
+
+.ar .accordion-button::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ar .footer-input button {
+  left: 9px;
+  right: unset;
+}
+
+.ar .footer-input input {
+  padding: 16px 24px 16px 158px;
+}
+
+
+
+
+
+
+
+
 @media only screen and (min-width:768px) and (max-width:1199px) {
   .menu-icon {
     padding: 0;
@@ -979,6 +1036,16 @@ marquee img {
     row-gap: 10px;
   }
 
+  .ar .close-icon {
+    right: unset;
+    left: 20px;
+  }
+
+  .virtual-2 {
+    border-left: 0;
+    border-right: 1px solid #CBCBCB;
+  }
+
 
 
 
@@ -994,6 +1061,21 @@ marquee img {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1467,6 +1549,46 @@ marquee img {
     transform: translateY(0%);
     opacity: 1;
   }
+
+
+  .ar .close-icon {
+    right: unset;
+    left: 20px;
+  }
+
+  .ar .header-btn {
+    left: unset;
+    right: 20px;
+  }
+
+  .ar .create-account .active p::after {
+    left: unset;
+    right: 6px;
+  }
+
+  .ar .create-account p::after {
+    left: unset;
+    right: 6.5px;
+  }
+
+  .ar .image-sec img:nth-child(2) {
+    right: -8px;
+    left: unset;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

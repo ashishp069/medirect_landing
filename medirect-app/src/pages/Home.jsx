@@ -12,10 +12,18 @@ export default function Home() {
   };
 
  
-  useEffect(() => {
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-    document.documentElement.lang = language;
-  }, [language]);
+ useEffect(() => {
+  const isArabic = language === "ar";
+
+  document.documentElement.dir = isArabic ? "rtl" : "ltr";
+  document.documentElement.lang = language;
+
+  if (isArabic) {
+    document.body.classList.add("ar");
+  } else {
+    document.body.classList.remove("ar");
+  }
+}, [language]);
 
   return (
    
