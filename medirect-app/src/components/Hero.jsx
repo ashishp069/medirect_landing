@@ -3,17 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { getCmsList } from "../api/cmsApi";
 // import "../styles/bootstrap.min.css";
 
-
 import "../styles/owl.carousel.min.css";
 import "../styles/owl.theme.default.min.css";
 import "../styles/animate.min.css";
 
-
-
-import doctorImg from "../assets/images/sec1-right.png";
-import avatar1 from "../assets/images/WebsiteLogo.svg";
-import danger from "../assets/images/emp-left.svg";
-import safe from "../assets/images/emp-right.svg";
 import footer from "../assets/images/footer-logo.svg";
 
 
@@ -34,9 +27,21 @@ export default function Hero() {
     fetchCms();
   }, []);
 
+  const stripHtml = (html) => {
+    if (!html) return "";
+
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent || "";
+  };
+
 
   const heroSection = cmsData?.section_1?.[0];
   const aboutSection = cmsData?.section_2?.[0];
+  const title = cmsData?.section_7?.[0]?.title?.split(",");
+
+  // --------------------- Section-1 -------------------------
+  const images = [cmsData?.section_1?.[0]?.image, cmsData?.section_1?.[0]?.image2,].filter(Boolean);
+  // ---------------------------------------------------------------
 
   return (
     <>
@@ -47,20 +52,20 @@ export default function Hero() {
             <div className="sec1-left">
               <div className="d-flex align-items-center happy-doctor wow animated fadeInUp">
                 <div className="image-sec">
-                  <img src={avatar1} alt="" />
-                  <img src={avatar1} alt="" />
-                  <img src={avatar1} alt="" />
+                  {images.map((img, index) => (
+                    <img key={index} src={img} alt={`section1-${index}`} />
+                  ))}
                 </div>
                 <p>
-                  {heroSection?.sub_title || "500+ Happy doctors"}
+                  {stripHtml(heroSection?.sub_title)}
                   <span className="circle">
                     <span></span>
                   </span>
                 </p>
               </div>
-              <h1 className="wow animated fadeInUp">{heroSection?.title}</h1>
+              <h1 className="wow animated fadeInUp">{stripHtml(heroSection?.title)}</h1>
               <p className="sec1-left-p wow animated fadeInUp">
-                {heroSection?.description}
+                {stripHtml(heroSection?.description)}
               </p>
               <div className="d-flex align-items-center btn-sec1 wow animated fadeInUp">
                 <button className="border-btn">Know more</button>
@@ -76,7 +81,7 @@ export default function Hero() {
           </div>
           <div className="col-md-6 sec1-right wow animated fadeInUp">
             <img
-              src={heroSection?.image || doctorImg}
+              src={heroSection?.image}
               className="w-100"
               alt="doctor"
             />
@@ -88,11 +93,11 @@ export default function Hero() {
       <section className="container-fluid section-2" id="about">
         <div className="row">
           <div className="col-md-4">
-            <h6 className="wow animated fadeInUp">{aboutSection?.sub_title || "About Medirect"}</h6>
+            <h6 className="wow animated fadeInUp">{stripHtml(aboutSection?.sub_title) || "About Medirect"}</h6>
           </div>
           <div className="col-md-8 about-right">
-            <h4 className="wow animated fadeInUp">{aboutSection?.title}</h4>
-            <p className="wow animated fadeInUp">{aboutSection?.description}</p>
+            <h4 className="wow animated fadeInUp">{stripHtml(aboutSection?.title)}</h4>
+            <p className="wow animated fadeInUp">{stripHtml(aboutSection?.description)}</p>
             <button className="background-btn wow animated fadeInUp">Know More</button>
           </div>
         </div>
@@ -121,11 +126,11 @@ export default function Hero() {
         <div className="solution-sec">
           <div className="col-md-6">
             <h6 className="wow animated fadeInUp">
-              {cmsData?.section_3?.[0]?.sub_title || "Medirect Solution"}
+              {stripHtml(cmsData?.section_3?.[0]?.sub_title) || ""}
             </h6>
             <h4 className="wow animated fadeInUp">
-              {cmsData?.section_3?.[0]?.title ||
-                "Unlock your productivity potential with our intuitive and powerful virtual clinic management app. Manage reservations, collaborate with your team and track progress effortlessly"}
+              {stripHtml(cmsData?.section_3?.[0]?.title) ||
+                ""}
             </h4>
           </div>
         </div>
@@ -139,9 +144,9 @@ export default function Hero() {
             return (
               <div className="col-md-4" key={index}>
                 <div className={`virtual-sec ${index > 0 ? `virtual-${index + 1}` : ""} wow animated fadeInUp`}>
-                  <img src={data?.image || `assets/images/virutual-${index + 1}.svg`} alt="" />
-                  <h4>{data?.title}</h4>
-                  <p>{data?.description}</p>
+                  <img src={data?.image} alt="" />
+                  <h4>{stripHtml(data?.title)}</h4>
+                  <p>{stripHtml(data?.description)}</p>
                 </div>
               </div>
             );
@@ -152,8 +157,8 @@ export default function Hero() {
       {/* WHY CHOOSE (INSTANT SETUP) SECTION 4 */}
       <section className="container-fluid section-4" id="whychoose">
         <div className="col-md-6 mx-auto why-1">
-          <h4 className="wow animated fadeInUp">{cmsData?.section_5?.[0]?.title}</h4>
-          <p className="wow animated fadeInUp">{cmsData?.section_5?.[0]?.description}</p>
+          <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.title)}</h4>
+          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.description)}</p>
         </div>
 
         {/* Dynamic Mapping for alternating Grid layout */}
@@ -171,8 +176,8 @@ export default function Hero() {
                     <div className="why-img">
                       <img src={`assets/images/why-${rowIndex * 2 + 1}.png`} className="w-100 wow animated fadeInUp" alt="" />
                       <div className="why-cont">
-                        <h4 className="wow animated fadeInUp">{pair[0].title}</h4>
-                        <p className="wow animated fadeInUp">{pair[0].description}</p>
+                        <h4 className="wow animated fadeInUp">{stripHtml(pair[0].title)}</h4>
+                        <p className="wow animated fadeInUp">{stripHtml(pair[0].description)}</p>
                       </div>
                     </div>
                   </div>
@@ -184,8 +189,8 @@ export default function Hero() {
                   <div className="why-img">
                     <img src={`assets/images/why-${rowIndex * 2 + 2}.png`} className="w-100 wow animated fadeInUp" alt="" />
                     <div className="why-cont">
-                      <h4 className="wow animated fadeInUp">{pair[1].title}</h4>
-                      <p className="wow animated fadeInUp">{pair[1].description}</p>
+                      <h4 className="wow animated fadeInUp">{stripHtml(pair[1].title)}</h4>
+                      <p className="wow animated fadeInUp">{stripHtml(pair[1].description)}</p>
                     </div>
                   </div>
                 </div>
@@ -201,10 +206,10 @@ export default function Hero() {
       <section className="container-fluid section-6" id="howitwork">
         <div className="row justify-content-between">
           <div className="col-md-4">
-            <h6 className="how-work wow animated fadeInUp">How Medirect works</h6>
+            <h6 className="how-work wow animated fadeInUp">{stripHtml(cmsData?.section_6?.[0]?.title)}</h6>
           </div>
           <div className="col-md-7 about-right wow animated fadeInUp">
-            <h4>{cmsData?.section_6?.[0]?.description}</h4>
+            <h4>{stripHtml(cmsData?.section_6?.[0]?.description)}</h4>
           </div>
         </div>
         <div className="create-account">
@@ -212,12 +217,14 @@ export default function Hero() {
             {cmsData?.section_6?.[0]?.sub_sections?.map((item, index) => (
               <React.Fragment key={item.id || index}>
                 <div className={`col-md-5 col-5 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
-                  <h4>{String(index + 1).padStart(2, "0")}. {item.title}</h4>
+                  <h4>
+                    {String(index + 1).padStart(2, "0")}. {stripHtml(item.title)}
+                  </h4>
                 </div>
                 <div className={`col-md-5 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
                   <p>
                     <span></span>
-                    {item.description}
+                    {stripHtml(item.description)}
                   </p>
                 </div>
               </React.Fragment>
@@ -230,19 +237,20 @@ export default function Hero() {
       <section className="container-fluid empowering" id="benefits">
         <div className="col-md-6 mx-auto emp-1">
           <h1 className="wow animated fadeInUp">
-            Empowering Doctors, <span className="d-block">Solving Challenges</span>
+            {stripHtml(title?.[0])},
+            <span className="d-block">{stripHtml(title?.[1])}</span>
           </h1>
-          <p className="wow animated fadeInUp">{cmsData?.section_7?.[0]?.description}</p>
+          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_7?.[0]?.description)}</p>
         </div>
         <div className="row emp-row">
           <div className="col-md-6">
             <div className="emp-left">
-              <h4 className="wow animated fadeInUp">{cmsData?.section_8?.[0]?.title || "Doctors face these challanges"}</h4>
+              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_8?.[0]?.title) || "Doctors face these challanges"}</h4>
               <ul>
                 {cmsData?.section_8?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
-                    <img src={danger} alt="" />
-                    {item.title}
+                    <img src={item.image} alt={"icon"} />
+                    {stripHtml(item.title)}
                   </li>
                 ))}
               </ul>
@@ -254,8 +262,8 @@ export default function Hero() {
               <ul>
                 {cmsData?.section_9?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
-                    <img src={safe} alt="" />
-                    {item.title}
+                    <img src={item.image} alt={"icon"} />
+                    {stripHtml(item.title)}
                   </li>
                 ))}
               </ul>
@@ -267,16 +275,19 @@ export default function Hero() {
       {/* WHY CHOOSE GRID SECTION */}
       <section className="container-fluid whychoose">
         <div className="col-md-6 mx-auto emp-1">
-          <h1 className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.title || "Why Choose Medirect?"}</h1>
-          <p className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.description}</p>
+          <h1 className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.title) || "Why Choose Medirect?"}</h1>
+          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.description)}</p>
         </div>
         <div className="row why-row">
           {cmsData?.section_10?.[0]?.sub_sections?.map((item, index) => (
             <div className="col-md-4 col-6" key={item.id || index}>
               <div className="why-sec-row">
-                <img src={`assets/images/choose-${index + 1}.svg`} className="wow animated fadeInUp" alt="" />
-                <h4 className="wow animated fadeInUp">{item.title}</h4>
-                <p className="wow animated fadeInUp">{item.description}</p>
+                <img
+                  src={item.image}
+                  className="wow animated fadeInUp"
+                  alt={stripHtml(item.title) || "icon"}
+                />                <h4 className="wow animated fadeInUp">{stripHtml(item.title)}</h4>
+                <p className="wow animated fadeInUp">{stripHtml(item.description)}</p>
               </div>
             </div>
           ))}
@@ -288,8 +299,8 @@ export default function Hero() {
 
       {/* FAQ SECTION */}
       <section className="col-md-7 mx-auto faq">
-        <h6>{cmsData?.section_11?.[0]?.title || "Frequently asked questions"}</h6>
-        <h3>{cmsData?.section_11?.[0]?.description || "You have questions, We got answers"}</h3>
+        <h6>{stripHtml(cmsData?.section_11?.[0]?.title) || ""}</h6>
+        <h3>{stripHtml(cmsData?.section_11?.[0]?.description) || ""}</h3>
         <div className="accordion" id="accordionExample">
           {cmsData?.section_11?.[0]?.sub_sections?.map((item, index) => (
             <FaqItem key={item.id || index} item={item} />
@@ -300,8 +311,8 @@ export default function Hero() {
       {/* FINAL CTA (LAUNCH) */}
       <section className="container-fluid launch">
         <div className="col-md-6 mx-auto text-center">
-          <h2 className="wow animated fadeInUp">{cmsData?.section_12?.[0]?.title || "Ready to launch your online clinic?"}</h2>
-          <p className="wow animated fadeInUp">{cmsData?.section_12?.[0]?.description || "Create an account, Add your details, Go online"}</p>
+          <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
+          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
           <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" onClick={() => navigate("/signup")}>
             Let’s get started
           </button>
@@ -346,6 +357,12 @@ export default function Hero() {
 function FaqItem({ item }) {
   const [open, setOpen] = useState(false);
 
+  const stripHtml = (html) => {
+    if (!html) return "";
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent || "";
+  };
+
   return (
     <div className="accordion-item wow animated fadeInUp">
       <h2 className="accordion-header">
@@ -354,11 +371,13 @@ function FaqItem({ item }) {
           type="button"
           onClick={() => setOpen(!open)}
         >
-          {item.title}
+          {stripHtml(item.title)}
         </button>
       </h2>
       <div className={`accordion-collapse collapse ${open ? "show" : ""}`}>
-        <div className="accordion-body">{item.description}</div>
+        <div className="accordion-body">
+          {stripHtml(item.description)}
+        </div>
       </div>
     </div>
   );
