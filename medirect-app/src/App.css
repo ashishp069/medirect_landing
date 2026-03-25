@@ -274,7 +274,7 @@ marquee img {
 }
 
 .solution-sec {
-  background: url('assets/images/solution.png')0 0 no-repeat;
+  /* background: url('assets/images/solution.png')0 0 no-repeat; */
   background-size: cover;
   height: 100%;
   border-radius: 16px;
@@ -291,6 +291,9 @@ marquee img {
   font-size: 42px;
   color: #232931;
   line-height: 46px;
+  /* Add these two lines to prevent mid-word breaking */
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .section-3 {

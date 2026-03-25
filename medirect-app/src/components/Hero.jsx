@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCmsList } from "../api/cmsApi";
-// import "../styles/bootstrap.min.css";
+import { getTranslation } from "../arabic";
 
 import "../styles/owl.carousel.min.css";
 import "../styles/owl.theme.default.min.css";
@@ -10,22 +10,9 @@ import "../styles/animate.min.css";
 import footer from "../assets/images/footer-logo.svg";
 
 
-export default function Hero() {
+export default function Hero({language,cmsData}) {
   const navigate = useNavigate();
-  const [cmsData, setCmsData] = useState(null);
-
-  useEffect(() => {
-    const fetchCms = async () => {
-      try {
-        const res = await getCmsList();
-        console.log("API:", res);
-        setCmsData(res.response);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchCms();
-  }, []);
+  const t = getTranslation(language);
 
   const stripHtml = (html) => {
     if (!html) return "";
@@ -68,15 +55,15 @@ export default function Hero() {
                 {stripHtml(heroSection?.description)}
               </p>
               <div className="d-flex align-items-center btn-sec1 wow animated fadeInUp">
-                <button className="border-btn">Know more</button>
+                <button className="border-btn">{t.hero.knowMore}</button>
                 <button
                   className="background-btn"
                   onClick={() => navigate("/signup")}
                 >
-                  Create account
+                  {t.hero.createAccount}
                 </button>
               </div>
-              <i className="wow animated fadeInUp">No commitments, Cancel anytime</i>
+              <i className="wow animated fadeInUp">{t.hero.noCommitment}</i>
             </div>
           </div>
           <div className="col-md-6 sec1-right wow animated fadeInUp">
@@ -93,12 +80,12 @@ export default function Hero() {
       <section className="container-fluid section-2" id="about">
         <div className="row">
           <div className="col-md-4">
-            <h6 className="wow animated fadeInUp">{stripHtml(aboutSection?.sub_title) || "About Medirect"}</h6>
+            <h6 className="wow animated fadeInUp">{stripHtml(aboutSection?.sub_title)}</h6>
           </div>
           <div className="col-md-8 about-right">
             <h4 className="wow animated fadeInUp">{stripHtml(aboutSection?.title)}</h4>
             <p className="wow animated fadeInUp">{stripHtml(aboutSection?.description)}</p>
-            <button className="background-btn wow animated fadeInUp">Know More</button>
+            <button className="background-btn wow animated fadeInUp">{t.about.knowMore}</button>
           </div>
         </div>
       </section>
@@ -122,35 +109,37 @@ export default function Hero() {
       </section>
 
       {/* SOLUTION SECTION */}
-      <section className="container-fluid" id="oursolution">
+      {/* <section className="container-fluid" id="oursolution">
         <div className="solution-sec">
           <div className="col-md-6">
             <h6 className="wow animated fadeInUp">
-              {stripHtml(cmsData?.section_3?.[0]?.sub_title) || ""}
+              {stripHtml(cmsData?.section_3?.[0]?.title) || ""}
             </h6>
             <h4 className="wow animated fadeInUp">
-              {stripHtml(cmsData?.section_3?.[0]?.title) ||
+              {stripHtml(cmsData?.section_3?.[0]?.description) ||
                 ""}
             </h4>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* VIRTUAL CLINICS (FEATURES) SECTION 3 */}
-      <section className="container-fluid section-3">
-        <div className="row virtual-row">
-          {[0, 1, 2].map((item, index) => {
-            const data = cmsData?.section_4?.[index];
-            return (
-              <div className="col-lg-4 col-md-6" key={index}>
-                <div className={`virtual-sec ${index > 0 ? `virtual-${index + 1}` : ""} wow animated fadeInUp`}>
-                  <img src={data?.image} alt="" />
-                  <h4>{stripHtml(data?.title)}</h4>
-                  <p>{stripHtml(data?.description)}</p>
-                </div>
+      <section className="container-fluid section-3 px-3">
+        <div className="row">
+          <div className="col-12">
+            <div className="solution-sec"
+              style={{ backgroundImage: `url(${cmsData?.section_3?.[0]?.image})` }}>
+              <h6 className="col-md-6 wow animated fadeInUp">
+                {stripHtml(cmsData?.section_3?.[0]?.title || "")}
+              </h6>
+              <div className="col-xl-6 col-lg-8 col-md-10">
+                <h4 className="wow animated fadeInUp">
+                  {stripHtml(cmsData?.section_3?.[0]?.description || "")}
+                </h4>
               </div>
-            );
-          })}
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -163,9 +152,9 @@ export default function Hero() {
 
         {/* Dynamic Mapping for alternating Grid layout SECTION 5 */}
         {cmsData?.section_5?.[0]?.sub_sections?.reduce((result, value, index, array) => {
-            if (index % 2 === 0) result.push(array.slice(index, index + 2));
-            return result;
-          }, [])
+          if (index % 2 === 0) result.push(array.slice(index, index + 2));
+          return result;
+        }, [])
           .map((pair, rowIndex) => (
             <div className="row instant-row" key={rowIndex}>
               {pair[0] && (
@@ -197,7 +186,7 @@ export default function Hero() {
             </div>
           ))}
         <button className="background-btn wow animated fadeInUp" onClick={() => navigate("/signup")}>
-          Let’s get started
+          {t.buttons.getStarted}
         </button>
       </section>
 
@@ -244,7 +233,7 @@ export default function Hero() {
         <div className="row emp-row">
           <div className="col-md-6">
             <div className="emp-left">
-              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_8?.[0]?.title) || "Doctors face these challanges"}</h4>
+              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_8?.[0]?.title) || ""}</h4>
               <ul>
                 {cmsData?.section_8?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
@@ -257,7 +246,7 @@ export default function Hero() {
           </div>
           <div className="col-md-6">
             <div className="emp-left emp-right">
-              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_9?.[0]?.title) || "Benefits of a private virtual clinic"}</h4>
+              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_9?.[0]?.title) || ""}</h4>
               <ul>
                 {cmsData?.section_9?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>
@@ -292,7 +281,7 @@ export default function Hero() {
           ))}
         </div>
         <button className="border-btn d-block mx-auto" onClick={() => navigate("/signup")}>
-          Let’s Get started
+          {t.buttons.getStarted}
         </button>
       </section>
 
@@ -313,7 +302,7 @@ export default function Hero() {
           <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
           <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" onClick={() => navigate("/signup")}>
-            Let’s get started
+            {t.buttons.getStarted}
           </button>
         </div>
       </section>
@@ -326,25 +315,25 @@ export default function Hero() {
               <img src={footer} alt="logo" />
             </a>
             <div className="foot-menu wow animated fadeInUp">
-              <a href="#about">About</a>
-              <a href="#whychoose">Why choose us</a>
-              <a href="#benefits">Benefits</a>
-              <a href="#howitwork">How it works</a>
-              <a href="#oursolution">Our solutions</a>
+              <a href="#about">{t.navbar.about}</a>
+              <a href="#whychoose">{t.navbar.whyChoose}</a>
+              <a href="#benefits">{t.navbar.benefits}</a>
+              <a href="#howitwork">{t.navbar.howItWorks}</a>
+              <a href="#oursolution">{t.navbar.solutions}</a>
             </div>
           </div>
           <div className="col-md-6">
-            <h4 className="wow animated fadeInUp">Discover How Medirect Empowers Doctors</h4>
+            <h4 className="wow animated fadeInUp">{t.footer.discover}</h4>
             <div className="footer-input wow animated fadeInUp">
-              <input type="text" placeholder="Enter your email" className="form-control" />
-              <button>Get Notified</button>
+              <input type="text" placeholder={t.footer.emailPlaceholder} className="form-control" />
+              <button>{t.footer.getNotified}</button>
             </div>
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-center footer-last wow animated fadeInUp">
-          <p>Copyright © 2025 Medirect Pvt. Ltd. | All Rights Reserved</p>
+          <p>{t.footer.copyright}</p>
           <p>
-            <a href="#">Privacy Policies</a> | <a href="#">Terms & Conditions</a> | <a href="#">Terms of use</a>
+            <a href="#">{t.footer.privacy}</a> | <a href="#">{t.footer.terms}</a> | <a href="#">{t.footer.termsUse}</a>
           </p>
         </div>
       </footer>
