@@ -161,9 +161,8 @@ export default function Hero() {
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.description)}</p>
         </div>
 
-        {/* Dynamic Mapping for alternating Grid layout */}
-        {cmsData?.section_5?.[0]?.sub_sections
-          ?.reduce((result, value, index, array) => {
+        {/* Dynamic Mapping for alternating Grid layout SECTION 5 */}
+        {cmsData?.section_5?.[0]?.sub_sections?.reduce((result, value, index, array) => {
             if (index % 2 === 0) result.push(array.slice(index, index + 2));
             return result;
           }, [])
@@ -174,7 +173,7 @@ export default function Hero() {
                   {rowIndex % 2 !== 0 && <div className="col-md-1"></div>}
                   <div className="col-md-5">
                     <div className="why-img">
-                      <img src={`assets/images/why-${rowIndex * 2 + 1}.png`} className="w-100 wow animated fadeInUp" alt="" />
+                      <img src={pair[0]?.image} className="w-100 wow animated fadeInUp" alt="" />
                       <div className="why-cont">
                         <h4 className="wow animated fadeInUp">{stripHtml(pair[0].title)}</h4>
                         <p className="wow animated fadeInUp">{stripHtml(pair[0].description)}</p>
@@ -187,7 +186,7 @@ export default function Hero() {
               {pair[1] && (
                 <div className="col-md-5 why-col">
                   <div className="why-img">
-                    <img src={`assets/images/why-${rowIndex * 2 + 2}.png`} className="w-100 wow animated fadeInUp" alt="" />
+                    <img src={pair[1]?.image} className="w-100 wow animated fadeInUp" alt="" />
                     <div className="why-cont">
                       <h4 className="wow animated fadeInUp">{stripHtml(pair[1].title)}</h4>
                       <p className="wow animated fadeInUp">{stripHtml(pair[1].description)}</p>
@@ -258,7 +257,7 @@ export default function Hero() {
           </div>
           <div className="col-md-6">
             <div className="emp-left emp-right">
-              <h4 className="wow animated fadeInUp">{cmsData?.section_9?.[0]?.title || "Benefits of a private virtual clinic"}</h4>
+              <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_9?.[0]?.title) || "Benefits of a private virtual clinic"}</h4>
               <ul>
                 {cmsData?.section_9?.[0]?.sub_sections?.map((item, i) => (
                   <li className="wow animated fadeInUp" key={i}>

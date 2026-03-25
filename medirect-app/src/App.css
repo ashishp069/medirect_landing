@@ -1182,4 +1182,9 @@ marquee img {
     }
 
 
+.image-sec img{
+  height:42px ;
+  width:42px;
+  border-radius: 50%;
+  object-fit: cover;
 }

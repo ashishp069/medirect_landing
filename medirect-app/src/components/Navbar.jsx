@@ -5,16 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 // import "../styles/master.css"; 
 import MEdirect from "../assets/images/medirectLogo.png";
 
-export default function Navbar() {
+// 1. Accept language and toggleLanguage as props
+export default function Navbar({ language, toggleLanguage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Replaces the jQuery menu() function
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handles smooth scrolling and closes the mobile menu upon clicking a link
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -36,17 +35,25 @@ export default function Navbar() {
       </Link>
 
       <div className={`d-flex align-items-center header-center ${isMenuOpen ? "show" : ""}`}>
+        {/* Note: You will eventually want to translate these hardcoded nav links too! */}
         <a href="#about" onClick={(e) => handleNavClick(e, "about")}>About</a>
         <a href="#oursolution" onClick={(e) => handleNavClick(e, "oursolution")}>Our solutions</a>
         <a href="#whychoose" onClick={(e) => handleNavClick(e, "whychoose")}>Why choose us</a>
         <a href="#howitwork" onClick={(e) => handleNavClick(e, "howitwork")}>How it works</a>
         <a href="#benefits" onClick={(e) => handleNavClick(e, "benefits")}>Benefits</a>
         
-        {/* Mobile Close Icon */}
         <button className="close-icon" onClick={toggleMenu}>
           <i className="fa fa-times"></i>
         </button>
       </div>
+
+      {/* 2. Attach the toggle function and dynamically change the button text */}
+      <button 
+        className="btn border-btn" 
+        onClick={toggleLanguage}
+      >
+        {language === "عربي" ? "en" : "English"}
+      </button>
 
       <button 
         className={`header-btn button-bg ${isMenuOpen ? "show" : ""}`}
@@ -55,7 +62,6 @@ export default function Navbar() {
         Sign up for free
       </button>
 
-      {/* Mobile Hamburger Icon */}
       <button className="menu-icon" onClick={toggleMenu}>
         <span></span>
         <span></span>
