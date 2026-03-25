@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // Use master.css to match the HTML template styles
-import "../styles/master.css"; 
+// import "../styles/master.css"; 
 import MEdirect from "../assets/images/medirectLogo.png";
 
 export default function Navbar() {
