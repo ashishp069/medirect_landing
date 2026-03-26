@@ -10,7 +10,7 @@ import "../styles/animate.min.css";
 import footer from "../assets/images/footer-logo.svg";
 
 
-export default function Hero({language,cmsData}) {
+export default function Hero({ language, cmsData }) {
   const navigate = useNavigate();
   const t = getTranslation(language);
 
@@ -29,6 +29,13 @@ export default function Hero({language,cmsData}) {
   // --------------------- Section-1 -------------------------
   const images = [cmsData?.section_1?.[0]?.image, cmsData?.section_1?.[0]?.image2,].filter(Boolean);
   // ---------------------------------------------------------------
+
+  const formatNumber = (num, lang) => {
+    if (lang === "ar") {
+      return new Intl.NumberFormat("ar-EG").format(num).padStart(2, "٠");
+    }
+    return String(num).padStart(2, "0");
+  };
 
   return (
     <>
@@ -206,7 +213,8 @@ export default function Hero({language,cmsData}) {
               <React.Fragment key={item.id || index}>
                 <div className={`col-lg-5 col-md-6 col-5 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
                   <h4>
-                    {String(index + 1).padStart(2, "0")}. {stripHtml(item.title)}
+                    {/* UPDATED LINE BELOW */}
+                    {formatNumber(index + 1, language)}. {stripHtml(item.title)}
                   </h4>
                 </div>
                 <div className={`col-lg-5 col-md-6 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
@@ -263,7 +271,7 @@ export default function Hero({language,cmsData}) {
       {/* WHY CHOOSE GRID SECTION */}
       <section className="container-fluid whychoose">
         <div className="col-lg-6 col-md-10 mx-auto emp-1">
-          <h1 className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.title) || "Why Choose Medirect?"}</h1>
+          <h1 className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.title) || ""}</h1>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.description)}</p>
         </div>
         <div className="row why-row">
