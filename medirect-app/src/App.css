@@ -18,6 +18,26 @@
   src: url('assets/fonts/Inter-Bold.ttf');
 }
 
+@font-face {
+  font-family: 'cairo-regular';
+  src: url('assets/fonts/Cairo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'cairo-medium';
+  src: url('assets/fonts/Cairo-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'cairo-semibold';
+  src: url('assets/fonts/Cairo-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'cairo-bold';
+  src: url('assets/fonts/Cairo-Bold.ttf');
+}
+
 body,
 html {
   margin: 0;
@@ -746,7 +766,58 @@ marquee img {
 
 .ar {
   direction: rtl;
+  font-family: 'cairo-regular';
 }
+
+.ar .header-btn,
+.ar .happy-doctor p,
+.ar h1,
+.ar h2,
+.ar h3,
+.ar h4,
+.ar h5,
+.ar h6,
+.ar .sec1-left-p,
+.ar .border-btn,
+.ar .background-btn,
+.ar .section-2 p,
+.ar .why-1 p,
+.ar .why-cont p,
+.ar .create-account p,
+.ar .emp-1 p,
+.ar .launch p,
+.ar .emp-left ul li,
+.lang-btn {
+  font-family: 'cairo-medium';
+}
+
+.ar .foot-menu a,
+.ar .marquee-1,
+.ar .header a {
+  font-family: 'cairo-semibold';
+
+}
+
+
+
+
+
+.ar .lang-btn {
+  font-family: 'inter-medium';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .ar,
 .ar .accordion-button {
