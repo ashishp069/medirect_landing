@@ -271,7 +271,7 @@ export default function Hero({ language, cmsData }) {
       {/* WHY CHOOSE GRID SECTION */}
       <section className="container-fluid whychoose">
         <div className="col-lg-6 col-md-10 mx-auto emp-1">
-          <h1 className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.title) || ""}</h1>
+          <h1 className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.title || ""}</h1>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.description)}</p>
         </div>
         <div className="row why-row">
