@@ -364,7 +364,10 @@ function FaqItem({ item }) {
       </h2>
       <div className={`accordion-collapse collapse ${open ? "show" : ""}`}>
         <div className="accordion-body">
+          <p>
           {stripHtml(item.description)}
+
+          </p>
         </div>
       </div>
     </div>
