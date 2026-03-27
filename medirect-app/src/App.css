@@ -855,6 +855,10 @@ marquee img {
   padding: 16px 24px 16px 158px;
 }
 
+.ar .image-sec img:nth-child(3) {
+    left: unset;
+    right: -24px;
+}
 
 
 
