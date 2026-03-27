@@ -107,7 +107,7 @@ export default function Hero({ language, cmsData }) {
         >
           {marqueeItems.map((item, index) => (
             <React.Fragment key={item.id || index}>
-              <span>{item.title}</span>
+              <span style={{ marginRight: "70px" }}>{item.title}</span>
               
             </React.Fragment>
           ))}
@@ -116,7 +116,7 @@ export default function Hero({ language, cmsData }) {
         <marquee className="marquee-1 marquee-2">
           {[...marqueeItems].reverse().map((item, index) => (
             <React.Fragment key={item.id || index}>
-              <span>{item.title}</span>
+              <span style={{ marginRight: "70px" }}>{item.title}</span>
               
             </React.Fragment>
           ))}
