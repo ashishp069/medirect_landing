@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { getCmsList } from "../api/cmsApi";
 import { getTranslation } from "../arabic";
 
+import img1 from "../assets/images/img1.svg"
+import img2 from "../assets/images/img2.svg"
+import img3 from "../assets/images/img3.svg"
+
 
 import "../styles/owl.carousel.min.css";
 import "../styles/owl.theme.default.min.css";
@@ -48,9 +52,9 @@ export default function Hero({ language, cmsData }) {
             <div className="sec1-left">
               <div className="d-flex align-items-center happy-doctor wow animated fadeInUp">
                 <div className="image-sec">
-                  {images.map((img, index) => (
-                    <img key={index} src={img} alt={`section1-${index}`} />
-                  ))}
+                  <img src={img1}/>
+                  <img src={img2}/>
+                  <img src={img3}/>
                 </div>
                 <p>
                   {stripHtml(heroSection?.sub_title)}
