@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getCmsList } from "../api/cmsApi";
 import { getTranslation } from "../arabic";
 
+
 import "../styles/owl.carousel.min.css";
 import "../styles/owl.theme.default.min.css";
 import "../styles/animate.min.css";
@@ -25,6 +26,7 @@ export default function Hero({ language, cmsData }) {
   const heroSection = cmsData?.section_1?.[0];
   const aboutSection = cmsData?.section_2?.[0];
   const title = cmsData?.section_7?.[0]?.title?.split(",");
+  const marqueeItems = cmsData?.section_13 || [];
 
   // --------------------- Section-1 -------------------------
   const images = [cmsData?.section_1?.[0]?.image, cmsData?.section_1?.[0]?.image2,].filter(Boolean);
@@ -99,19 +101,25 @@ export default function Hero({ language, cmsData }) {
 
       {/* MARQUEE SECTION */}
       <section className="marquee-section wow animated fadeInUp">
-        <marquee className="marquee-1" style={{ position: "relative", zIndex: 9 }}>
-          <span>Personalised Website </span>
-          <img src="assets/images/star.svg" alt="" />
-          <span>Simplified Dashboard</span>
-          <img src="assets/images/star.svg" alt="" />
-          <span>Online Clinic</span>
+        <marquee
+          className="marquee-1"
+          style={{ position: "relative", zIndex: 9 }}
+        >
+          {marqueeItems.map((item, index) => (
+            <React.Fragment key={item.id || index}>
+              <span>{item.title}</span>
+              
+            </React.Fragment>
+          ))}
         </marquee>
+
         <marquee className="marquee-1 marquee-2">
-          <span>Online Clinic</span>
-          <img src="assets/images/star.svg" alt="" />
-          <span>Personalised Website </span>
-          <img src="assets/images/star.svg" alt="" />
-          <span>Simplified Dashboard</span>
+          {[...marqueeItems].reverse().map((item, index) => (
+            <React.Fragment key={item.id || index}>
+              <span>{item.title}</span>
+              
+            </React.Fragment>
+          ))}
         </marquee>
       </section>
 
