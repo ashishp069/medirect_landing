@@ -115,21 +115,6 @@ export default function Hero({ language, cmsData }) {
         </marquee>
       </section>
 
-      {/* SOLUTION SECTION */}
-      {/* <section className="container-fluid" id="oursolution">
-        <div className="solution-sec">
-          <div className="col-md-6">
-            <h6 className="wow animated fadeInUp">
-              {stripHtml(cmsData?.section_3?.[0]?.title) || ""}
-            </h6>
-            <h4 className="wow animated fadeInUp">
-              {stripHtml(cmsData?.section_3?.[0]?.description) ||
-                ""}
-            </h4>
-          </div>
-        </div>
-      </section> */}
-
       {/* VIRTUAL CLINICS (FEATURES) SECTION 3 */}
       <section className="container-fluid section-3 px-3">
         <div className="row">
@@ -147,6 +132,23 @@ export default function Hero({ language, cmsData }) {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="container-fluid section-3">
+        <div className="row virtual-row">
+          {[0, 1, 2].map((item, index) => {
+            const data = cmsData?.section_4?.[index];
+            return (
+              <div className="col-md-4" key={index}>
+                <div className={`virtual-sec ${index > 0 ? `virtual-${index + 1}` : ""} wow animated fadeInUp`}>
+                  <img src={data?.image || `assets/images/virutual-${index + 1}.svg`} alt="" />
+                  <h4>{stripHtml(data?.title)}</h4>
+                  <p>{stripHtml(data?.description)}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -373,7 +375,7 @@ function FaqItem({ item }) {
       <div className={`accordion-collapse collapse ${open ? "show" : ""}`}>
         <div className="accordion-body">
           <p>
-          {stripHtml(item.description)}
+            {stripHtml(item.description)}
 
           </p>
         </div>
