@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getCmsList } from "../api/cmsApi";
 import { getTranslation } from "../arabic";
 
@@ -128,7 +128,7 @@ export default function Hero({ language, cmsData }) {
       </section>
 
       {/* VIRTUAL CLINICS (FEATURES) SECTION 3 */}
-      <section className="container-fluid section-3 px-3">
+      <section className="container-fluid section-3 px-3" id="oursolution">
         <div className="row">
           <div className="col-12">
             <div className="solution-sec"
@@ -344,10 +344,12 @@ export default function Hero({ language, cmsData }) {
             </a>
             <div className="foot-menu wow animated fadeInUp">
               <a href="#about">{t.navbar.about}</a>
-              <a href="#whychoose">{t.navbar.whyChoose}</a>
-              <a href="#benefits">{t.navbar.benefits}</a>
-              <a href="#howitwork">{t.navbar.howItWorks}</a>
               <a href="#oursolution">{t.navbar.solutions}</a>
+              <a href="#whychoose">{t.navbar.whyChoose}</a>
+              <a href="#howitwork">{t.navbar.howItWorks}</a>
+              <a href="#benefits">{t.navbar.benefits}</a>
+
+
             </div>
           </div>
           <div className="col-md-6">
@@ -361,7 +363,9 @@ export default function Hero({ language, cmsData }) {
         <div className="d-flex justify-content-between align-items-center footer-last wow animated fadeInUp">
           <p>{t.footer.copyright}</p>
           <p>
-            <a href="#">{t.footer.privacy}</a> | <a href="#">{t.footer.terms}</a> | <a href="#">{t.footer.termsUse}</a>
+            <Link to="/privacy-policy">{t.footer.privacy}</Link> |{" "}
+            <Link to="/terms-conditions">{t.footer.terms}</Link> {" "}
+            {/* <Link to="/terms-of-use">{t.footer.termsUse}</Link> */}
           </p>
         </div>
       </footer>

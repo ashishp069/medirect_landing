@@ -861,7 +861,104 @@ marquee img {
 }
 
 
+/* --------------------Fotter------------------ */
+/* =========================================
+   Legal Pages (Privacy, Terms & Conditions)
+   ========================================= */
 
+.legal-page-section {
+  background-color: #f4f7f6; /* Soft medical/neutral background */
+  padding: 60px 0 100px 0;
+  min-height: 100vh;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #0056b3; /* Match this to your brand primary color */
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+.legal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 50px 60px;
+}
+
+.legal-header {
+  border-bottom: 2px solid #eef2f5;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.legal-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222b36;
+  margin-bottom: 10px;
+}
+
+.last-updated {
+  color: #637381;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.legal-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222b36;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.legal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #454f5b;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.legal-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #454f5b;
+  margin-bottom: 20px;
+}
+
+.legal-content ul {
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+.legal-content ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #454f5b;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .legal-card {
+    padding: 30px 20px;
+  }
+  .legal-header h1 {
+    font-size: 28px;
+  }
+}
 
 
 

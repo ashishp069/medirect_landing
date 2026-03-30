@@ -29,7 +29,7 @@ const en = {
     emailPlaceholder: "Enter your email",
     getNotified: "Get Notified",
     copyright:
-      "Copyright © 2025 Medirect Pvt. Ltd. | All Rights Reserved",
+      "Copyright © 2026 Medirect Pvt. Ltd. | All Rights Reserved",
     privacy: "Privacy Policies",
     terms: "Terms & Conditions",
     termsUse: "Terms of use",
