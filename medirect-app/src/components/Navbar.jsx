@@ -57,7 +57,7 @@ export default function Navbar({ language, toggleLanguage }) {
 
         <button
           className={`header-btn button-bg ${isMenuOpen ? "show" : ""}`}
-          onClick={() => navigate("/medirect_doctor/")}
+          onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}
         >
           {t.navbar.signup}
         </button>

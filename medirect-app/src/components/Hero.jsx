@@ -71,7 +71,7 @@ export default function Hero({ language, cmsData }) {
                 {/* <button className="border-btn">{t.hero.knowMore}</button> */}
                 <button
                   className="background-btn"
-                  onClick={() => navigate("/medirect_doctor/")}
+                  onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}
                 >
                   {t.hero.createAccount}
                 </button>
@@ -207,7 +207,7 @@ export default function Hero({ language, cmsData }) {
             </div>
           ))}
         <button className="background-btn wow animated fadeInUp" 
-        onClick={() => navigate("/medirect_doctor/")}>
+        onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
           {t.buttons.getStarted}
         </button>
       </section>
@@ -304,7 +304,7 @@ export default function Hero({ language, cmsData }) {
           ))}
         </div>
         <button className="border-btn d-block mx-auto" 
-        onClick={() => navigate("/medirect_doctor/")}>
+        onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
           {t.buttons.getStarted}
         </button>
       </section>
@@ -325,9 +325,7 @@ export default function Hero({ language, cmsData }) {
         <div className="col-lg-6 col-md-10 mx-auto text-center">
           <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
-          <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" 
-          onClick={() => navigate("/medirect_doctor/")}
-          >
+          <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
             {t.buttons.getStarted}
           </button>
         </div>

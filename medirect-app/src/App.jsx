@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/medirect_landing/signup">
+    <BrowserRouter basename="/medirect_landing">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
