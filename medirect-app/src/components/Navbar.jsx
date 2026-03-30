@@ -57,7 +57,7 @@ export default function Navbar({ language, toggleLanguage }) {
 
         <button
           className={`header-btn button-bg ${isMenuOpen ? "show" : ""}`}
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate("/medirect_doctor/")}
         >
           {t.navbar.signup}
         </button>
