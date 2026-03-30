@@ -52,9 +52,9 @@ export default function Hero({ language, cmsData }) {
             <div className="sec1-left">
               <div className="d-flex align-items-center happy-doctor wow animated fadeInUp">
                 <div className="image-sec">
-                  <img src={img1}/>
-                  <img src={img2}/>
-                  <img src={img3}/>
+                  <img src={img1} />
+                  <img src={img2} />
+                  <img src={img3} />
                 </div>
                 <p>
                   {stripHtml(heroSection?.sub_title)}
@@ -71,7 +71,7 @@ export default function Hero({ language, cmsData }) {
                 {/* <button className="border-btn">{t.hero.knowMore}</button> */}
                 <button
                   className="background-btn"
-                  onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}
+                  onClick={() => window.open("http://35.154.4.154/medirect_doctor/", "_blank")}
                 >
                   {t.hero.createAccount}
                 </button>
@@ -112,7 +112,7 @@ export default function Hero({ language, cmsData }) {
           {marqueeItems.map((item, index) => (
             <React.Fragment key={item.id || index}>
               <span style={{ marginRight: "70px" }}>{item.title}</span>
-              
+
             </React.Fragment>
           ))}
         </marquee>
@@ -121,7 +121,7 @@ export default function Hero({ language, cmsData }) {
           {[...marqueeItems].reverse().map((item, index) => (
             <React.Fragment key={item.id || index}>
               <span style={{ marginRight: "70px" }}>{item.title}</span>
-              
+
             </React.Fragment>
           ))}
         </marquee>
@@ -206,8 +206,9 @@ export default function Hero({ language, cmsData }) {
               )}
             </div>
           ))}
-        <button className="background-btn wow animated fadeInUp" 
-        onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
+        <button className="background-btn wow animated fadeInUp"
+          onClick={() => window.open("http://35.154.4.154/medirect_doctor/", "_blank")}
+        >
           {t.buttons.getStarted}
         </button>
       </section>
@@ -303,8 +304,9 @@ export default function Hero({ language, cmsData }) {
             </div>
           ))}
         </div>
-        <button className="border-btn d-block mx-auto" 
-        onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
+        <button className="border-btn d-block mx-auto"
+          onClick={() => window.open("http://35.154.4.154/medirect_doctor/", "_blank")}
+        >
           {t.buttons.getStarted}
         </button>
       </section>
@@ -325,7 +327,9 @@ export default function Hero({ language, cmsData }) {
         <div className="col-lg-6 col-md-10 mx-auto text-center">
           <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
           <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
-          <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp" onClick={() => window.location.href = "http://35.154.4.154/medirect_doctor/"}>
+          <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp"
+            onClick={() => window.open("http://35.154.4.154/medirect_doctor/", "_blank")}
+          >
             {t.buttons.getStarted}
           </button>
         </div>
