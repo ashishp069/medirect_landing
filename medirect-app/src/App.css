@@ -254,11 +254,22 @@ a:hover {
   line-height: 46px;
 }
 
+.about-desc {
+  margin-top: 24px;
+}
+
+.about-desc p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
+}
+
 .section-2 p {
   font-size: 16px;
   color: #373B41;
   font-family: 'inter-medium';
-  padding: 55px 0 82px;
+  padding: 0px 0 1px;
 }
 
 .section-2 button {
@@ -486,6 +497,26 @@ marquee img {
 
 }
 
+.emp-1 .emp-desc {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.emp-1 .emp-desc p,
+.emp-1 p {
+  text-align: center;
+  font-size: 18px;
+  color: #1B3453;
+  font-family: 'inter-medium';
+
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
+
+  background-color: transparent !important;
+}
+
 .emp-1 h1 {
   font-size: 48px;
   text-align: center;
@@ -494,7 +525,7 @@ marquee img {
 }
 
 .emp-1 p {
-  padding: 12px 0 60px;
+  /* padding: 12px 0 60px; */
   text-align: center;
   font-size: 18px;
   color: #1B3453;
@@ -952,6 +983,22 @@ marquee img {
   line-height: 1.8;
   color: #454f5b;
   margin-bottom: 10px;
+}
+
+.whychoose-desc {
+  margin-top: 24px;   
+  margin-bottom: 48px; 
+}
+
+.whychoose-desc p,
+.whychoose .emp-1 p {
+  padding: 0 !important; 
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.4; 
+  text-align: center;
+  font-size: 18px; 
+  font-family: 'inter-medium';
 }
 
 /* Responsive adjustments */
