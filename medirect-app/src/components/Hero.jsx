@@ -248,8 +248,8 @@ export default function Hero({ language, cmsData }) {
                   </h4>
                 </div>
                 <div className={`col-lg-5 col-md-6 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
-                  <p>
-                    <span></span>
+                  <p className="line-p">
+                    <span className="line-p-span"></span>
                     <div dangerouslySetInnerHTML={{ __html: item.description || "" }} />
                   </p>
                 </div>
@@ -338,10 +338,10 @@ export default function Hero({ language, cmsData }) {
       {/* FAQ SECTION */}
       <section className="col-lg-7 col-md-10 mx-auto faq">
         <h6>{stripHtml(cmsData?.section_11?.[0]?.title) || ""}</h6>
-        <div
+        <h3
           className="wow animated fadeInUp"
           dangerouslySetInnerHTML={{ __html: cmsData?.section_12?.[0]?.description || "" }}
-        />
+        ></h3>
         <div className="accordion" id="accordionExample">
           {cmsData?.section_11?.[0]?.sub_sections?.map((item, index) => (
             <FaqItem key={item.id || index} item={item} />

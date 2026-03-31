@@ -434,7 +434,7 @@ marquee img {
   color: #1B3453;
 }
 
-.create-account p span {
+.create-account p .line-p-span {
   width: 24px;
   min-width: 24px;
   height: 24px;
@@ -460,7 +460,7 @@ marquee img {
   color: #1B3453;
 }
 
-.create-account p::after {
+.create-account .line-p::after {
   height: 100%;
   content: '';
   position: absolute;
@@ -837,7 +837,7 @@ marquee img {
   left: unset;
 }
 
-.ar .create-account p::after {
+.ar .create-account .line-p::after {
   right: 11.5px;
   left: unset;
 }
@@ -1548,13 +1548,13 @@ marquee img {
     padding-bottom: 30px;
   }
 
-  .create-account p span {
+  .create-account p .line-p-span {
     width: 14px;
     min-width: 14px;
     height: 14px;
   }
 
-  .create-account p::after {
+  .create-account .line-p::after {
     left: 6.5px;
   }
 
@@ -1746,7 +1746,7 @@ marquee img {
     right: 6px;
   }
 
-  .ar .create-account p::after {
+  .ar .create-account .line-p::after {
     left: unset;
     right: 6.5px;
   }
