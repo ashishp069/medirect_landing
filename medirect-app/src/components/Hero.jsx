@@ -64,9 +64,10 @@ export default function Hero({ language, cmsData }) {
                 </p>
               </div>
               <h1 className="wow animated fadeInUp">{stripHtml(heroSection?.title)}</h1>
-              <p className="sec1-left-p wow animated fadeInUp">
-                {stripHtml(heroSection?.description)}
-              </p>
+              <div
+                className="sec1-left-p wow animated fadeInUp"
+                dangerouslySetInnerHTML={{ __html: heroSection?.description || "" }}
+              />
               <div className="d-flex align-items-center btn-sec1 wow animated fadeInUp">
                 {/* <button className="border-btn">{t.hero.knowMore}</button> */}
                 <button
@@ -97,7 +98,10 @@ export default function Hero({ language, cmsData }) {
           </div>
           <div className="col-md-8 about-right">
             <h4 className="wow animated fadeInUp">{stripHtml(aboutSection?.title)}</h4>
-            <p className="wow animated fadeInUp">{stripHtml(aboutSection?.description)}</p>
+            <div
+              className="wow animated fadeInUp"
+              dangerouslySetInnerHTML={{ __html: aboutSection?.description || "" }}
+            />
             {/* <button className="background-btn wow animated fadeInUp">{t.about.knowMore}</button> */}
           </div>
         </div>
@@ -137,9 +141,10 @@ export default function Hero({ language, cmsData }) {
                 {stripHtml(cmsData?.section_3?.[0]?.title || "")}
               </h6>
               <div className="col-xl-6 col-lg-8 col-md-10">
-                <h4 className="wow animated fadeInUp">
-                  {stripHtml(cmsData?.section_3?.[0]?.description || "")}
-                </h4>
+                <h4
+                  className="wow animated fadeInUp"
+                  dangerouslySetInnerHTML={{ __html: cmsData?.section_3?.[0]?.description || "" }}
+                />
               </div>
 
             </div>
@@ -156,7 +161,7 @@ export default function Hero({ language, cmsData }) {
                 <div className={`virtual-sec ${index > 0 ? `virtual-${index + 1}` : ""} wow animated fadeInUp`}>
                   <img src={data?.image || `assets/images/virutual-${index + 1}.svg`} alt="" />
                   <h4>{stripHtml(data?.title)}</h4>
-                  <p>{stripHtml(data?.description)}</p>
+                  <div dangerouslySetInnerHTML={{ __html: data?.description || "" }} />
                 </div>
               </div>
             );
@@ -168,7 +173,10 @@ export default function Hero({ language, cmsData }) {
       <section className="container-fluid section-4" id="whychoose">
         <div className="col-lg-6 col-md-10 mx-auto why-1">
           <h4 className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.title)}</h4>
-          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_5?.[0]?.description)}</p>
+          <div
+            className="wow animated fadeInUp"
+            dangerouslySetInnerHTML={{ __html: cmsData?.section_5?.[0]?.description || "" }}
+          />
         </div>
 
         {/* Dynamic Mapping for alternating Grid layout SECTION 5 */}
@@ -186,7 +194,10 @@ export default function Hero({ language, cmsData }) {
                       <img src={pair[0]?.image} className="w-100 wow animated fadeInUp" alt="" />
                       <div className="why-cont">
                         <h4 className="wow animated fadeInUp">{stripHtml(pair[0].title)}</h4>
-                        <p className="wow animated fadeInUp">{stripHtml(pair[0].description)}</p>
+                        <div
+                          className="wow animated fadeInUp"
+                          dangerouslySetInnerHTML={{ __html: pair[0].description || "" }}
+                        />
                       </div>
                     </div>
                   </div>
@@ -199,7 +210,10 @@ export default function Hero({ language, cmsData }) {
                     <img src={pair[1]?.image} className="w-100 wow animated fadeInUp" alt="" />
                     <div className="why-cont">
                       <h4 className="wow animated fadeInUp">{stripHtml(pair[1].title)}</h4>
-                      <p className="wow animated fadeInUp">{stripHtml(pair[1].description)}</p>
+                      <div
+                        className="wow animated fadeInUp"
+                        dangerouslySetInnerHTML={{ __html: pair[1].description || "" }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -220,7 +234,7 @@ export default function Hero({ language, cmsData }) {
             <h6 className="how-work wow animated fadeInUp">{stripHtml(cmsData?.section_6?.[0]?.title)}</h6>
           </div>
           <div className="col-md-7 about-right wow animated fadeInUp">
-            <h4>{stripHtml(cmsData?.section_6?.[0]?.description)}</h4>
+            <h4 dangerouslySetInnerHTML={{ __html: cmsData?.section_6?.[0]?.description || "" }} />
           </div>
         </div>
         <div className="create-account">
@@ -236,7 +250,7 @@ export default function Hero({ language, cmsData }) {
                 <div className={`col-lg-5 col-md-6 col-7 ${index === 0 ? "active" : ""} wow animated fadeInUp`}>
                   <p>
                     <span></span>
-                    {stripHtml(item.description)}
+                    <div dangerouslySetInnerHTML={{ __html: item.description || "" }} />
                   </p>
                 </div>
               </React.Fragment>
@@ -252,7 +266,10 @@ export default function Hero({ language, cmsData }) {
             {stripHtml(title?.[0])},
             <span className="d-block">{stripHtml(title?.[1])}</span>
           </h1>
-          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_7?.[0]?.description)}</p>
+          <div
+            className="wow animated fadeInUp"
+            dangerouslySetInnerHTML={{ __html: cmsData?.section_7?.[0]?.description || "" }}
+          />
         </div>
         <div className="row emp-row">
           <div className="col-md-6">
@@ -288,7 +305,10 @@ export default function Hero({ language, cmsData }) {
       <section className="container-fluid whychoose">
         <div className="col-lg-6 col-md-10 mx-auto emp-1">
           <h1 className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.title || ""}</h1>
-          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_10?.[0]?.description)}</p>
+          <div
+            className="wow animated fadeInUp"
+            dangerouslySetInnerHTML={{ __html: cmsData?.section_10?.[0]?.description || "" }}
+          />
         </div>
         <div className="row why-row">
           {cmsData?.section_10?.[0]?.sub_sections?.map((item, index) => (
@@ -298,8 +318,12 @@ export default function Hero({ language, cmsData }) {
                   src={item.image}
                   className="wow animated fadeInUp"
                   alt={stripHtml(item.title) || "icon"}
-                />                <h4 className="wow animated fadeInUp">{stripHtml(item.title)}</h4>
-                <p className="wow animated fadeInUp">{stripHtml(item.description)}</p>
+                />
+                <h4 className="wow animated fadeInUp">{stripHtml(item.title)}</h4>
+                <div
+                  className="wow animated fadeInUp"
+                  dangerouslySetInnerHTML={{ __html: item.description || "" }}
+                />
               </div>
             </div>
           ))}
@@ -314,7 +338,10 @@ export default function Hero({ language, cmsData }) {
       {/* FAQ SECTION */}
       <section className="col-lg-7 col-md-10 mx-auto faq">
         <h6>{stripHtml(cmsData?.section_11?.[0]?.title) || ""}</h6>
-        <h3>{stripHtml(cmsData?.section_11?.[0]?.description) || ""}</h3>
+        <div
+          className="wow animated fadeInUp"
+          dangerouslySetInnerHTML={{ __html: cmsData?.section_12?.[0]?.description || "" }}
+        />
         <div className="accordion" id="accordionExample">
           {cmsData?.section_11?.[0]?.sub_sections?.map((item, index) => (
             <FaqItem key={item.id || index} item={item} />
@@ -326,7 +353,10 @@ export default function Hero({ language, cmsData }) {
       <section className="container-fluid launch">
         <div className="col-lg-6 col-md-10 mx-auto text-center">
           <h2 className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.title) || ""}</h2>
-          <p className="wow animated fadeInUp">{stripHtml(cmsData?.section_12?.[0]?.description) || ""}</p>
+          <div
+            className="wow animated fadeInUp"
+            dangerouslySetInnerHTML={{ __html: cmsData?.section_12?.[0]?.description || "" }}
+          />
           <button className="w-75 background-btn d-block mx-auto wow animated fadeInUp"
             onClick={() => window.open("http://35.154.4.154/medirect_doctor/", "_blank")}
           >
@@ -396,10 +426,7 @@ function FaqItem({ item }) {
       </h2>
       <div className={`accordion-collapse collapse ${open ? "show" : ""}`}>
         <div className="accordion-body">
-          <p>
-            {stripHtml(item.description)}
-
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: item.description || "" }} />
         </div>
       </div>
     </div>

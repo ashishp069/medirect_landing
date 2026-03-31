@@ -339,6 +339,7 @@ marquee img {
 }
 
 .virtual-sec p {
+  word-break: break-all;
   font-size: 16px;
   line-height: 22px;
   width: 300px;
@@ -395,6 +396,7 @@ marquee img {
 }
 
 .why-cont p {
+  word-break: break-all;
   font-size: 14px;
   color: #444444;
   font-family: 'inter-medium';
@@ -856,8 +858,8 @@ marquee img {
 }
 
 .ar .image-sec img:nth-child(3) {
-    left: unset;
-    right: -24px;
+  left: unset;
+  right: -24px;
 }
 
 
@@ -867,7 +869,8 @@ marquee img {
    ========================================= */
 
 .legal-page-section {
-  background-color: #f4f7f6; /* Soft medical/neutral background */
+  background-color: #f4f7f6;
+  /* Soft medical/neutral background */
   padding: 60px 0 100px 0;
   min-height: 100vh;
 }
@@ -875,7 +878,8 @@ marquee img {
 .back-btn {
   background: none;
   border: none;
-  color: #0056b3; /* Match this to your brand primary color */
+  color: #0056b3;
+  /* Match this to your brand primary color */
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 20px;
@@ -955,6 +959,7 @@ marquee img {
   .legal-card {
     padding: 30px 20px;
   }
+
   .legal-header h1 {
     font-size: 28px;
   }
