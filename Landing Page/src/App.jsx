@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 
 function App() {
   return (
-    <BrowserRouter basename="/medirect_landing">
+    <BrowserRouter basename="/Doctor_landing">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

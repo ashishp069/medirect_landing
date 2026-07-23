@@ -87,7 +87,7 @@ export default function Hero() {
       <section className="container-fluid section-2" id="about">
         <div className="row">
           <div className="col-md-4">
-            <h6 className="wow animated fadeInUp">{aboutSection?.sub_title || "About Medirect"}</h6>
+            <h6 className="wow animated fadeInUp">{aboutSection?.sub_title || "About Doctor"}</h6>
           </div>
           <div className="col-md-8 about-right">
             <h4 className="wow animated fadeInUp">{aboutSection?.title}</h4>
@@ -120,7 +120,7 @@ export default function Hero() {
         <div className="solution-sec">
           <div className="col-md-6">
             <h6 className="wow animated fadeInUp">
-              {cmsData?.section_3?.[0]?.sub_title || "Medirect Solution"}
+              {cmsData?.section_3?.[0]?.sub_title || "Doctor Solution"}
             </h6>
             <h4 className="wow animated fadeInUp">
               {cmsData?.section_3?.[0]?.title ||
@@ -200,7 +200,7 @@ export default function Hero() {
       <section className="container-fluid section-6" id="howitwork">
         <div className="row justify-content-between">
           <div className="col-md-4">
-            <h6 className="how-work wow animated fadeInUp">How Medirect works</h6>
+            <h6 className="how-work wow animated fadeInUp">How Doctor works</h6>
           </div>
           <div className="col-md-7 about-right wow animated fadeInUp">
             <h4>{cmsData?.section_6?.[0]?.description}</h4>
@@ -266,7 +266,7 @@ export default function Hero() {
       {/* WHY CHOOSE GRID SECTION */}
       <section className="container-fluid whychoose">
         <div className="col-md-6 mx-auto emp-1">
-          <h1 className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.title || "Why Choose Medirect?"}</h1>
+          <h1 className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.title || "Why Choose Doctor?"}</h1>
           <p className="wow animated fadeInUp">{cmsData?.section_10?.[0]?.description}</p>
         </div>
         <div className="row why-row">
@@ -323,7 +323,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="col-md-6">
-            <h4 className="wow animated fadeInUp">Discover How Medirect Empowers Doctors</h4>
+            <h4 className="wow animated fadeInUp">Discover How Doctor Empowers Doctors</h4>
             <div className="footer-input wow animated fadeInUp">
               <input type="text" placeholder="Enter your email" className="form-control" />
               <button>Get Notified</button>
@@ -331,7 +331,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="d-flex justify-content-between align-items-center footer-last wow animated fadeInUp">
-          <p>Copyright © 2025 Medirect Pvt. Ltd. | All Rights Reserved</p>
+          <p>Copyright © 2025 Doctor Pvt. Ltd. | All Rights Reserved</p>
           <p>
             <a href="#">Privacy Policies</a> | <a href="#">Terms & Conditions</a> | <a href="#">Terms of use</a>
           </p>

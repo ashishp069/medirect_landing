@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Use master.css to match the HTML template styles
 import "../styles/master.css"; 
-import MEdirect from "../assets/images/medirectLogo.png";
+import Doctor from "../assets/images/DoctorLogo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Navbar() {
     <header className="container-fluid d-flex align-items-center justify-content-between header">
       
       <Link to="/" className="logo">
-        <img src={MEdirect} alt="Medirect logo" />
+        <img src={Doctor} alt="Doctor logo" />
       </Link>
 
       <div className={`d-flex align-items-center header-center ${isMenuOpen ? "show" : ""}`}>
